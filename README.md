@@ -1,96 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteio de Amigo</title>
+    <title>README - Sorteador de Amigos</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 2em 0;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 0.5em;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        ul {
-            margin-top: 1em;
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 0.5em;
-        }
-        .erro {
-            color: red;
-        }
-        .button {
-            display: inline-block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 0.5em 1em;
-            margin: 1em 0;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2 { color: #333; }
+        code { background: #f4f4f4; padding: 5px; border-radius: 5px; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
     </style>
 </head>
 <body>
+    <h1>📌 Sorteador de Amigos</h1>
+    <p>Este é um simples programa em JavaScript que permite adicionar amigos a uma lista e realizar um sorteio aleatório entre eles.</p>
+    
+    <h2>🛠️ Funcionalidades</h2>
+    <ul>
+        <li>Adicionar nomes de amigos a uma lista.</li>
+        <li>Evitar nomes duplicados.</li>
+        <li>Sortear aleatoriamente um amigo da lista.</li>
+    </ul>
+    
+    <h2>🚀 Como Usar</h2>
+    <p>Basta adicionar um nome no campo de entrada e clicar no botão para adicioná-lo à lista. Depois, clique no botão de sorteio para escolher um amigo aleatoriamente.</p>
+    
+    <h2>📜 Código</h2>
+    <pre><code>
+const amigos = [];
 
-<header>
-    <h1>Sorteio de Amigo</h1>
-</header>
+function adicionarAmigo() {
+    const inputAmigo = document.getElementById("amigo");
+    const listaAmigos = document.getElementById("listaAmigos");
+    const mensagemErro = document.getElementById("mensagemErro");
+    let nome = inputAmigo.value.trim();
 
-<div class="container">
-    <section>
-        <h2>Funcionalidades</h2>
-        <ul>
-            <li><strong>Adicionar Amigo:</strong> O usuário pode adicionar o nome de um amigo à lista. Se o nome já estiver na lista, será solicitado que o usuário acrescente um sobrenome para distinguir o amigo.</li>
-            <li><strong>Sorteio de Amigo:</strong> O usuário pode realizar um sorteio aleatório entre os amigos cadastrados. Se não houver amigos na lista, uma mensagem de erro será exibida.</li>
-        </ul>
-    </section>
+    if (!nome) {
+        mensagemErro.textContent = "Por favor, digite um nome válido!";
+        return;
+    }
 
-    <section>
-        <h2>Como Usar</h2>
-        <ol>
-            <li>Abra o arquivo HTML no navegador.</li>
-            <li>Na interface, insira o nome de um amigo e clique no botão para adicionar.</li>
-            <li>Selecione o botão de sorteio para escolher um amigo aleatoriamente da lista.</li>
-            <li>Caso o nome já tenha sido adicionado anteriormente, será exibida uma mensagem de erro informando para adicionar um sobrenome.</li>
-        </ol>
-    </section>
+    if (amigos.includes(nome)) {
+        mensagemErro.textContent = `O nome "${nome}" já foi adicionado. Acrescente um sobrenome para distinguir este amigo.`;
+        return;
+    }
 
-    <section>
-        <h2>Como Funciona o Código</h2>
-        <p><strong>Função <code>adicionarAmigo</code>:</strong> Esta função é responsável por adicionar um novo amigo à lista de amigos. Ela realiza as seguintes verificações:</p>
-        <ul>
-            <li>Se o nome es
+    amigos.push(nome);
+    const listItem = document.createElement("li");
+    listItem.textContent = nome;
+    listaAmigos.appendChild(listItem);
+    inputAmigo.value = "";
+    mensagemErro.textContent = "";
+}
+
+function sortearAmigo() {
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = "";
+
+    if (amigos.length === 0) {
+        resultado.innerHTML = '<li class="erro">Nenhum amigo foi adicionado ainda!</li>';
+        return;
+    }
+    
+    const sorteado = amigos[Math.floor(Math.random() * amigos.length)];
+    resultado.innerHTML = `<li>O amigo sorteado foi: <strong>${sorteado}</strong></li>`;
+}    
+    </code></pre>
+    
+    <h2>🐛 Possíveis Erros</h2>
+    <ul>
+        <li>Se o campo estiver vazio ao adicionar um amigo, uma mensagem de erro será exibida.</li>
+        <li>Se um nome já existir na lista, uma mensagem de erro pedirá para diferenciá-lo com um sobrenome.</li>
+        <li>Se a lista estiver vazia no momento do sorteio, uma mensagem informará que não há amigos para sortear.</li>
+    </ul>
+    
+    <h2>📌 Contribuições</h2>
+    <p>Sinta-se à vontade para contribuir com melhorias e novas funcionalidades!</p>
+    
+    <h2>📜 Licença</h2>
+    <p>Este projeto está sob a licença MIT. Você pode usá-lo e modificá-lo como quiser.</p>
+</body>
+</html>
