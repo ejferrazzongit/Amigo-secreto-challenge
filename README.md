@@ -1,29 +1,31 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README - Sorteador de Amigos</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-        h1, h2 { color: #333; }
-    </style>
-</head>
-<body>
-    <h1>📌 Sorteador de Amigos</h1>
-    <p>Este projeto permite adicionar amigos a uma lista e realizar um sorteio aleatório entre eles.</p>
-    
-    <h2>🛠️ Funcionalidades</h2>
-    <ul>
-        <li>Adicionar nomes de amigos a uma lista, evitando duplicatas.</li>
-        <li>Exibir mensagens de erro caso o nome já exista ou o campo esteja vazio.</li>
-        <li>Sortear um amigo aleatoriamente da lista adicionada.</li>
-    </ul>
-    
-    <h2>📌 Contribuições</h2>
-    <p>Sinta-se à vontade para contribuir com melhorias e novas funcionalidades!</p>
-    
-    <h2>📜 Licença</h2>
-    <p>Este projeto está sob a licença MIT.</p>
-</body>
-</html>
+# Sorteador de Amigos
+
+Este projeto é um simples sorteador de amigos feito em JavaScript. Ele permite adicionar nomes a uma lista e, posteriormente, sortear um nome aleatoriamente.
+
+## Funcionalidades
+- Adicionar amigos à lista (evitando nomes duplicados)
+- Exibir uma mensagem de erro caso o nome já tenha sido adicionado
+- Sortear aleatoriamente um amigo da lista
+
+## Como Usar
+1. Digite o nome de um amigo no campo de entrada.
+2. Clique no botão "Adicionar" para inserir o nome na lista.
+3. Para sortear um amigo, clique no botão "Sortear".
+4. O nome sorteado será exibido na tela.
+
+## Tecnologias Utilizadas
+- HTML
+- CSS
+- JavaScript
+
+## Melhorias Futuras
+- Implementar a opção de remover amigos da lista.
+- Melhorar a interface gráfica.
+- Adicionar restrições para evitar nomes muito curtos.
+
+## Contribuição
+Sinta-se à vontade para contribuir! Caso tenha sugestões ou melhorias, envie um pull request ou abra uma issue.
+
+## Licença
+Este projeto está sob a licença MIT.
+
