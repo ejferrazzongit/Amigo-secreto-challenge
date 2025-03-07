@@ -29,3 +29,5 @@ Sinta-se à vontade para contribuir! Caso tenha sugestões ou melhorias, envie u
 ## Licença
 Este projeto está sob a licença MIT.
 
+Deploy 
+https://amigo-secreto-challengeej.vercel.app/
